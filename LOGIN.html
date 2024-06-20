@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Login</title>
+    <script>
+        function autoLogin() {
+            // URL của trang web cần đăng nhập
+            const url = 'https://app.toolzbuy.com/login';
+
+            // Thông tin đăng nhập
+            const userId = 'chinh90';
+            const password = 'Ducchinh';
+
+            // Tạo một form để gửi thông tin đăng nhập
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = url;
+
+            // Tạo các input ẩn để chứa thông tin đăng nhập
+            const inputUserId = document.createElement('input');
+            inputUserId.type = 'hidden';
+            inputUserId.name = 'amember_login'; // Thay 'username' bằng tên trường ID của form trên trang web
+            inputUserId.value = userId;
+            form.appendChild(inputUserId);
+
+            const inputPassword = document.createElement('input');
+            inputPassword.type = 'hidden';
+            inputPassword.name = 'amember_pass'; // Thay 'password' bằng tên trường mật khẩu của form trên trang web
+            inputPassword.value = password;
+            form.appendChild(inputPassword);
+
+            // Thêm form vào body và submit form
+            document.body.appendChild(form);
+            form.submit();
+        }
+    </script>
+</head>
+<body onload="autoLogin()">
+    <h1>Đang đăng nhập...</h1>
+</body>
+</html>
